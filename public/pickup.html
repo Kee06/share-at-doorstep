@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Pickup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Schedule a Pickup</h1>
+  <form id="pickupForm">
+    <input type="text" id="donorName" placeholder="Your Name" required>
+    <input type="text" id="address" placeholder="Pickup Address" required>
+    <input type="date" id="date" required>
+    <input type="text" id="timeSlot" placeholder="Time Slot (e.g. 10AM-12PM)" required>
+    <button type="submit">Schedule Pickup</button>
+  </form>
+  <div id="message"></div>
+
+  <script src="pickup.js"></script>
+</body>
+</html>
