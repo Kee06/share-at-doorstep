@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Donate from "./pages/Donate";
+import OurStory from "./pages/OurStory";
+import HowWeWork from "./pages/HowWeWork";
+import FAQs from "./pages/FAQs";
 import "./App.css";
 
 function App() {
@@ -11,6 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/our-story" element={<OurStory />} />
+        <Route path="/how-we-work" element={<HowWeWork />} />
+        <Route path="/faqs" element={<FAQs />} />
       </Routes>
     </Router>
   );

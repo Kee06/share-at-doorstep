@@ -1,0 +1,28 @@
+.how-we-work-page {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.how-we-work-page h1 {
+  color: #3e2723;
+  margin-bottom: 16px;
+}
+
+.how-we-work-page h2 {
+  color: #f15622;
+  font-size: 1.2rem;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.how-we-work-page p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.how-we-work-page ol {
+  margin-left: 20px;
+  color: #444;
+  line-height: 1.8;
+}

@@ -1,0 +1,40 @@
+.faqs-page {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.faqs-page h1 {
+  text-align: center;
+  color: #3e2723;
+  margin-bottom: 32px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 16px 4px;
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-question span {
+  color: #f15622;
+  font-weight: bold;
+}
+
+.faq-answer {
+  padding: 0 4px 16px;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

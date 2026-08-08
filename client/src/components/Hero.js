@@ -6,7 +6,7 @@ function Hero() {
       <div className="hero-text">
         <h1>Let's Spread Happiness</h1>
         <p>We Deliver your Donations to the Right Place</p>
-        <a href="http://localhost:5000/" className="hero-btn">Book a Pickup</a>
+        <a href="http://localhost:5000/pickup.html" className="hero-btn">Book a Pickup</a>
       </div>
     </section>
   );

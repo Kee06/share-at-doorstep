@@ -1,0 +1,49 @@
+.why-donate {
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.why-donate h2 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.why-donate h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f15622;
+  margin: 12px auto 36px;
+}
+
+.why-donate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.benefit-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.benefit-card h3 {
+  color: #f15622;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.benefit-card p {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .why-donate-grid {
+    grid-template-columns: 1fr;
+  }
+}

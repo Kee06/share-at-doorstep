@@ -1,0 +1,29 @@
+.our-story {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.our-story h1 {
+  color: #3e2723;
+  margin-bottom: 20px;
+}
+
+.our-story h2 {
+  color: #f15622;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.our-story p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.our-story ul {
+  margin: 0 0 20px 20px;
+  color: #444;
+  line-height: 1.7;
+}

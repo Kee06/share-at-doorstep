@@ -1,0 +1,49 @@
+.stories {
+  padding: 60px 24px;
+  text-align: center;
+  background-color: #f9f6f1;
+}
+
+.stories h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stories-intro {
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto 36px;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.story-card {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.story-card h3 {
+  color: #f15622;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.story-card p {
+  color: #555;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 700px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+}
