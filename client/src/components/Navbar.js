@@ -8,7 +8,8 @@ function Navbar() {
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/dashboard">Dashboard</Link>
-<a href="http://localhost:5000/pickup.html" className="navbar-cta">Book a Pickup</a>      </div>
+        <a href="http://localhost:5000/" className="navbar-cta">Book a Pickup</a>
+      </div>
     </nav>
   );
 }

@@ -4,8 +4,18 @@
 }
 
 .how-it-works h2 {
-  margin-bottom: 40px;
-  color: #3e2723;
+  margin-bottom: 8px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.how-it-works h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f15622;
+  margin: 12px auto 32px;
 }
 
 .steps-grid {
@@ -20,10 +30,28 @@
   background: #fdf6ee;
   border-radius: 10px;
   padding: 28px 16px;
+  text-align: center;
 }
 
-.step-icon { font-size: 2rem; margin-bottom: 12px; }
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.step-card h3 {
+  color: #f15622;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
 
 @media (max-width: 700px) {
-  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
 }
