@@ -1,0 +1,22 @@
+.categories {
+  padding: 50px 24px;
+  text-align: center;
+  background: #fff;
+}
+
+.categories h2 { color: #3e2723; margin-bottom: 30px; }
+
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.category-chip {
+  background: #f15622;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 500;
+}
