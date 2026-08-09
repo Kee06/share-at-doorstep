@@ -5,6 +5,7 @@ import Donate from "./pages/Donate";
 import OurStory from "./pages/OurStory";
 import HowWeWork from "./pages/HowWeWork";
 import FAQs from "./pages/FAQs";
+import Login from "./pages/Login";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/how-we-work" element={<HowWeWork />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
