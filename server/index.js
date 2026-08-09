@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 
-const donationRoutes = require('./routes/donationRoutes');
+
 const pickupRoutes = require('./routes/pickupRoutes');
 const ngoRoutes = require('./routes/ngoRoutes');
 
@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-app.use('/api/donations', donationRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
