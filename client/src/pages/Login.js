@@ -33,7 +33,7 @@ function Login() {
             SMS OTP
           </button>
           <button
-            className={loginMethod === "password" ? "toggle-link active" : "toggle-link"}
+            className={loginMethod === "password" ? "toggle-btn active" : "toggle-btn"}
             onClick={() => setLoginMethod("password")}
           >
             PASSWORD
