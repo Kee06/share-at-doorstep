@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
@@ -89,9 +90,11 @@ function Login() {
         {status && <p className="login-status">{status}</p>}
 
         <div className="first-time">
-          <hr />
-          <p>FIRST TIME USER?</p>
-          <button className="secondary-btn">CLICK HERE</button>
+        <hr />
+        <p>FIRST TIME USER?</p>
+        <Link to="/register" className="secondary-btn-link">
+            <button className="secondary-btn">CLICK HERE</button>
+        </Link>
         </div>
       </div>
     </div>
