@@ -1,9 +1,15 @@
 import { useState } from "react";
 import "./Donate.css";
 
+const categories = ["Clothes", "Food", "Toys", "Books", "Household", "Other"];
+const conditions = ["New", "Good", "Fair", "Used"];
+
 function Donate() {
-  const [itemName, setItemName] = useState("");
+  const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [condition, setCondition] = useState("");
+  const [quantity, setQuantity] = useState();
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
@@ -14,14 +20,17 @@ function Donate() {
       const res = await fetch("http://localhost:5000/api/donations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ itemName, category }),
+        body: JSON.stringify({ title, category, description, condition, quantity }),
       });
 
       if (!res.ok) throw new Error("Failed to submit");
 
       setStatus("Thank you! Your donation has been recorded.");
-      setItemName("");
+      setTitle("");
       setCategory("");
+      setDescription("");
+      setCondition("Good");
+      setQuantity(1);
     } catch (err) {
       setStatus("Something went wrong. Please try again.");
     }
@@ -31,20 +40,41 @@ function Donate() {
     <div className="donate-page">
       <form className="donate-form" onSubmit={handleSubmit}>
         <h1>Donate an Item</h1>
+
         <input
           type="text"
-          placeholder="Item Name"
-          value={itemName}
-          onChange={(e) => setItemName(e.target.value)}
+          placeholder="Item Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
+
+        <select value={category} onChange={(e) => setCategory(e.target.value)} required>
+          <option value="">Select category</option>
+          {categories.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
+
+        <textarea
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+
+        <select value={condition} onChange={(e) => setCondition(e.target.value)}>
+          {conditions.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
+
         <input
-          type="text"
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
+          type="number"
+          min="1"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
         />
+
         <button type="submit">Donate</button>
         {status && <p className="donate-status">{status}</p>}
       </form>
