@@ -12,7 +12,6 @@ function Navbar() {
         <div className="nav-dropdown">
           <span className="nav-dropdown-label">Get Involved</span>
           <div className="nav-dropdown-menu">
-            <Link to="/donate">Donate Items</Link>
             <Link to="/ngo-partner">Become an NGO Partner</Link>
             <Link to="/volunteer">Volunteer</Link>
           </div>
@@ -35,9 +34,8 @@ function Navbar() {
         </div>
 
         <Link to="/dashboard">Dashboard</Link>
+        <Link to="/login">Sign In</Link>
         <a href="http://localhost:5000/pickup.html" className="navbar-cta">Book a Pickup</a>
-
-        <Link to="/login" className="signin-btn">Sign In</Link>
       </div>
     </nav>
   );
