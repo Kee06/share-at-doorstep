@@ -9,7 +9,7 @@ function Donate() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [condition, setCondition] = useState("");
-  const [quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState("");
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
@@ -20,7 +20,13 @@ function Donate() {
       const res = await fetch("http://localhost:5000/api/donations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, category, description, condition, quantity }),
+        body: JSON.stringify({
+          title,
+          category,
+          description,
+          condition,
+          quantity: Number(quantity),
+        }),
       });
 
       if (!res.ok) throw new Error("Failed to submit");
@@ -29,8 +35,8 @@ function Donate() {
       setTitle("");
       setCategory("");
       setDescription("");
-      setCondition("Good");
-      setQuantity(1);
+      setCondition("");
+      setQuantity("");
     } catch (err) {
       setStatus("Something went wrong. Please try again.");
     }
@@ -62,7 +68,8 @@ function Donate() {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <select value={condition} onChange={(e) => setCondition(e.target.value)}>
+        <select value={condition} onChange={(e) => setCondition(e.target.value)} required>
+          <option value="">Select condition</option>
           {conditions.map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
@@ -71,8 +78,10 @@ function Donate() {
         <input
           type="number"
           min="1"
+          placeholder="Quantity"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
+          required
         />
 
         <button type="submit">Donate</button>
