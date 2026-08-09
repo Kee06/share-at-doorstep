@@ -58,27 +58,32 @@ function Login() {
             </button>
           </form>
         ) : (
-          <form onSubmit={handlePasswordLogin}>
+          <form onSubmit={handlePasswordLogin} className="password-form">
             <label>
-              Email <span className="required">*</span>
+            Email <span className="required">*</span>
             </label>
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
             />
-            <label>Password *</label>
+            <label>
+            Password <span className="required">*</span>
+            </label>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
             />
-            <button type="submit" className="primary-btn">
-              LOGIN
-            </button>
-          </form>
+            <div className="submit-row">
+                <button type="submit" className="primary-btn submit-btn">
+                SUBMIT
+                </button>
+            </div>
+            <p className="forgot-link">Forgot or Don't have a password?</p>
+            </form>
         )}
 
         {status && <p className="login-status">{status}</p>}

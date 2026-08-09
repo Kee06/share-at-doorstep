@@ -149,3 +149,26 @@
 .secondary-btn:hover {
   background-color: #52433d;
 }
+
+.submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  width: auto;
+  padding: 14px 40px;
+}
+
+.forgot-link {
+  text-align: center;
+  color: #df5333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
