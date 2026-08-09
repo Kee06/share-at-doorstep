@@ -36,6 +36,8 @@ function Navbar() {
 
         <Link to="/dashboard">Dashboard</Link>
         <a href="http://localhost:5000/pickup.html" className="navbar-cta">Book a Pickup</a>
+
+        <Link to="/login" className="signin-btn">Sign In</Link>
       </div>
     </nav>
   );
