@@ -23,7 +23,8 @@
   text-align: center;
 }
 
-.donate-form input {
+.donate-form input, .donate-form select,
+.donate-form textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 16px;

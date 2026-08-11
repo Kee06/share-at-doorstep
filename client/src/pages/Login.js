@@ -11,7 +11,7 @@ function Login() {
   const handleGetOtp = (e) => {
     e.preventDefault();
     setStatus("OTP sent (not yet connected to backend)");
-    // TODO: connect to POST /api/auth/send-otp once Member 1 builds it
+    // TODO: connect to POST /api/auth/send-otp
   };
 
   const handlePasswordLogin = (e) => {
