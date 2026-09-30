@@ -1,24 +1,42 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css"; // reuse the same styling
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
   const [status, setStatus] = useState("");
+  const navigate = useNavigate();
 
-  const handleGetOtp = (e) => {
+  const handleGetOtp = async (e) => {
     e.preventDefault();
-    setStatus("OTP sent (not yet connected to backend)");
-    // TODO: connect to POST /api/auth/register once backend exists
+    setStatus("Registering user...");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, fullName, mobile }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus(`Registered! Your sample OTP is: ${data.sampleOtp}`);
+        setTimeout(() => navigate("/login"), 3000);
+      } else {
+        setStatus(data.message || "Registration failed");
+      }
+    } catch (err) {
+      setStatus("Error connecting to backend server");
+    }
   };
 
   return (
     <div className="login-page">
       <div className="login-card">
         <h1>Sign into your SADS account</h1>
-
         <p className="one-time-label">ONE-TIME REGISTRATION</p>
         <hr />
 
