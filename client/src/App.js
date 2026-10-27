@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Donate from "./pages/Donate";
+import StoryPage from "./pages/StoryPage";
 import "./App.css";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/stories/:slug" element={<StoryPage />} />
       </Routes>
       <Footer />
     </Router>

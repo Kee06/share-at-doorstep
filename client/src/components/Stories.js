@@ -1,19 +1,6 @@
+import { Link } from "react-router-dom";
+import { stories } from "../data/stories";
 import "./Stories.css";
-
-const stories = [
-  {
-    title: "How One Family's Donation Reached a Local Shelter",
-    text: "A single doorstep pickup turned a closet full of old clothes into warm layers for kids at a nearby shelter — all within 48 hours.",
-  },
-  {
-    title: "Why Donating Beats Throwing Away",
-    text: "Every year, usable items end up in landfills simply because donating feels inconvenient. Doorstep pickup removes that barrier entirely.",
-  },
-  {
-    title: "Meet the NGOs We Work With",
-    text: "From children's education to elderly care, our partner NGOs put every donated item directly into the hands of someone who needs it.",
-  },
-];
 
 function Stories() {
   return (
@@ -23,11 +10,12 @@ function Stories() {
         Real donations, real impact — a look at where your items go after pickup.
       </p>
       <div className="stories-grid">
-        {stories.map((s, i) => (
-          <div className="story-card" key={i}>
+        {stories.map((s) => (
+          <Link to={`/stories/${s.slug}`} className="story-card" key={s.slug}>
             <h3>{s.title}</h3>
-            <p>{s.text}</p>
-          </div>
+            <p>{s.summary}</p>
+            <span className="story-readmore">Read more →</span>
+          </Link>
         ))}
       </div>
     </section>
