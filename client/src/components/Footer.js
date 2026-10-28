@@ -1,19 +1,42 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
+const socials = [
+  { href: "https://facebook.com", text: "Facebook" },
+  { href: "https://twitter.com", text: "Twitter" },
+  { href: "https://instagram.com", text: "Instagram" },
+];
+
+const pageLinks = [
+  { to: "/", text: "Share at Doorstep" },
+  { to: "/terms", text: "Terms Of Use" },
+  { to: "/privacy", text: "Privacy Policy" },
+];
+
+function FooterLink({ to, href, text }) {
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {text}
+      </a>
+    );
+  }
+  return <Link to={to}>{text}</Link>;
+}
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-socials">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        {socials.map((s) => (
+          <FooterLink key={s.text} href={s.href} text={s.text} />
+        ))}
       </div>
       <div className="footer-bottom">
         <span>Copyright © 2026</span>
-        <Link to="/">Share at Doorstep</Link>
-        <Link to="/terms">Terms Of Use</Link>
-        <Link to="/privacy">Privacy Policy</Link>
+        {pageLinks.map((p) => (
+          <FooterLink key={p.to} to={p.to} text={p.text} />
+        ))}
       </div>
     </footer>
   );

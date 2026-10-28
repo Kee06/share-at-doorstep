@@ -5,21 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Share At Door Step - Pickup Flow</title>
   <link rel="stylesheet" href="pickup-wizard.css">
+<link rel="stylesheet" href="site-nav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- TOP NAVIGATION HEADER -->
-  <header class="top-nav">
-    <div class="logo-container">
-      <strong>Share At Door Step</strong>
+<!-- SITE NAVBAR -->
+<nav class="site-nav">
+  <a href="http://localhost:3000/" class="site-nav-logo">Share at Doorstep</a>
+
+  <div class="site-nav-links">
+    <a href="http://localhost:3000/">Home</a>
+
+    <div class="site-nav-dropdown">
+      <span class="site-nav-label">Get Involved</span>
+      <div class="site-nav-menu">
+        <a href="http://localhost:3000/ngo-partner">Become an NGO Partner</a>
+        <a href="http://localhost:3000/volunteer">Volunteer</a>
+      </div>
     </div>
-    <div class="header-contact">
-      <i class="fa-solid fa-phone"></i>
-      <span class="slash">/</span>
-      <i class="fa-brands fa-whatsapp"></i>
+
+    <div class="site-nav-dropdown">
+      <span class="site-nav-label">About Us</span>
+      <div class="site-nav-menu">
+        <a href="http://localhost:3000/our-story">Our Story</a>
+        <a href="http://localhost:3000/how-we-work">How We Work</a>
+      </div>
     </div>
-  </header>
+
+    <div class="site-nav-dropdown">
+      <span class="site-nav-label">Contact Us</span>
+      <div class="site-nav-menu">
+        <a href="http://localhost:3000/faqs">FAQs</a>
+        <a href="http://localhost:3000/contact">Send a Query</a>
+      </div>
+    </div>
+
+    <a href="http://localhost:3000/login">Sign In</a>
+    <a href="pickup.html" class="site-nav-cta">Book a Pickup</a>
+  </div>
+</nav>
 
   <!-- CHEVRON PROGRESS STEPPER BAR -->
   <div class="stepper-container">

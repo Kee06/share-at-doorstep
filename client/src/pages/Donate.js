@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FormSelect from "../components/FormSelect";
 import "./Donate.css";
 
 const categories = ["Clothes", "Food", "Toys", "Books", "Household", "Other"];
@@ -55,12 +56,12 @@ function Donate() {
           required
         />
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)} required>
-          <option value="">Select category</option>
-          {categories.map((c) => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
+        <FormSelect
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          options={categories}
+          placeholder="Select category"
+        />
 
         <textarea
           placeholder="Description"
@@ -68,12 +69,7 @@ function Donate() {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <select value={condition} onChange={(e) => setCondition(e.target.value)} required>
-          <option value="">Select condition</option>
-          {conditions.map((c) => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
+      
 
         <input
           type="number"
